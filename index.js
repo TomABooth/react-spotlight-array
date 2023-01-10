@@ -21,7 +21,15 @@ export const printAddress = (obj) => {
 // Refactor this function so that all values in the object are destructured
 // as part of the function definitions (i.e. there should be no dots in the template literals)
 export const printUserInfo = (user) => {
-  const {username, name: { first, last }}
+  const {
+    username,
+    name: { first, last },
+    info: {
+      favorites: { color, food },
+      pet: { name: petName },
+      address: { number, street, city, country },
+    },
+  } = user
   return `
     Username: ${user.username},
     Full Name: ${user.name.first} ${user.name.last},
@@ -37,7 +45,8 @@ export const printUserInfo = (user) => {
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = () => {}
+export const getSum = (...rest) => {}
+}
 
 // INPUT: an unknown number of arguments
 // OUTPUT: an array with the first two arguments destructured and the remaining in a nested array
