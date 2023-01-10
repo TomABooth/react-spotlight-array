@@ -45,7 +45,12 @@ export const printUserInfo = (user) => {
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = (...rest) => {}
+export const getSum = (...rest) => {
+  let total = 0
+  for (const item of rest) {
+    total += item
+  }
+  return total
 }
 
 // INPUT: an unknown number of arguments
