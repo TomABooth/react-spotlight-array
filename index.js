@@ -13,14 +13,15 @@ export const getName = (obj) => {
 // REQS: use destructuring and template literals
 
 export const printAddress = (obj) => {
-  const address = obj.address
-  return `${obj.name} lives at `
+  const { address } = obj
+  return `${obj.name} lives at ${address.number} ${address.street}, ${address.city}, ${address.country}`
 }
 
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
-// as part of the funciton definitions (i.e. there should be no dots in the template literals)
+// as part of the function definitions (i.e. there should be no dots in the template literals)
 export const printUserInfo = (user) => {
+  const {username, name: { first, last }}
   return `
     Username: ${user.username},
     Full Name: ${user.name.first} ${user.name.last},
